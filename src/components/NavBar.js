@@ -8,9 +8,9 @@ const NavBar = () => {
             <a className="btn btn-ghost normal-case text-xl">Arte Digital</a>
             <a className="btn btn-ghost normal-case text-xl">Pinturas</a>
         </div>
-        <div className="flex-1">
+        {/* <div className="flex-1">
             <a className="btn btn-ghost normal-case text-xl">Yanilog</a>
-        </div>
+        </div> */}
         <div className="form-control">
             <input type="text" placeholder="Buscar" className="input input-bordered" />
         </div>
