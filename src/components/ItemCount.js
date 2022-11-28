@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { IconName } from "react-icons/io";
 
+const ItemCount = ({stock}) => {
 
-const ItemCount = () => {
-
-    const [contador, setContador] = useState(0)
+    const [contador, setContador] = useState(1)
 
     const cuentaClick = () => {
-        console.log(`Se hizo click ${contador + 1} veces`);
+        console.log(`Se hizo click ${contador} veces`);
+        console.log(stock);
         setContador(contador + 1)
+        if(contador+1==stock){
+            console.log('STOCK Y CONTADOR IGUALES');
+        }
     }
 
     const restaClick = () => {
@@ -30,8 +33,6 @@ const ItemCount = () => {
                     <p>{contador}</p>
                     <button onClick={cuentaClick} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">+</button>
                 </div>
-
-
                 <br />
                 <button onClick={reset} className="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Volver a Cero</button>
             </div>

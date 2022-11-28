@@ -3,7 +3,6 @@ import Item from "./Item";
 
 const ItemList = () => {
 
-
     //  http://drive.google.com/uc?export=view&id={ACA VA EL ID}
     // Asi viene el link desde Drive --> https://drive.google.com/file/d/16C1wM1FVC4vMwQ4WGE5UzmlNZLQFOtVA/view?usp=share_link
     // Poner asi --> https://drive.google.com/uc?export=view&id=16C1wM1FVC4vMwQ4WGE5UzmlNZLQFOtVA

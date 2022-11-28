@@ -19,7 +19,7 @@ const Item = ({ id, title, description, price, pictureUrl, stock }) => {
             <p>{description}</p>
             <p>${price}</p>
             <div className="card-actions justify-end">
-              <ItemCount />
+              <ItemCount stock={stock}/>
               <button onClick={onAdd} className="btn btn-primary">Comprar</button>
             </div>
           </div>
