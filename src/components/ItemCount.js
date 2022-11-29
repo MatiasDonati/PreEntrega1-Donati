@@ -8,7 +8,7 @@ const ItemCount = ({ stock }) => {
     const cuentaClick = () => {
         // console.log(`Se hizo click ${contador} veces`);
         setContador(contador + 1)
-        contador + 1 == stock ? console.log('STOCK Y CONTADOR IGUALES') : console.log(''); ;
+        contador + 1 == stock ? console.log('STOCK Y CONTADOR IGUALES') : console.log('');
     }
 
     const restaClick = () => {

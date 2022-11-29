@@ -4,6 +4,7 @@ import ItemListContainer from './components/ItemListContainer';
 import Footer from './components/Footer';
 import InputsColors from './components/InputsColors';
 import ItemCount from './components/ItemCount';
+import CharList from './components/rickandmorty/CharList';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <>
       <NavBar />
       <ItemListContainer greeting={saludo} />
+      <CharList />
       <InputsColors />
       <Footer />
     </>
