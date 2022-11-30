@@ -2,17 +2,18 @@ import { useEffect } from "react"
 
 const ItemDetailContainer = () => {
 
-    const producto1 = {
-        title: 'Sarasa'
-    }
+  useEffect(() => {
+    verDetalle()
+  }, [])
 
-    useEffect(()=>{
-        verDetalle()
-    },[])
+  const producto1 = {
+    title: 'Sarasa'
+  }
 
-    const verDetalle = ()=> {
-        
-    }
+
+  const verDetalle = () => {
+
+  }
 
   return (
     <div>ItemDetailContainer</div>
