@@ -28,10 +28,9 @@ const CharList = () => {
         setPersonajes(data.results)
     }
 
-    const [verPersonajes, setVerPersonajes] = useState([false])
+    const [verPersonajes, setVerPersonajes] = useState(false)
 
     console.log(verPersonajes);
-
 
     useEffect(() => {
         setVerPersonajes(false)
