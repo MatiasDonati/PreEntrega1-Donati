@@ -4,7 +4,6 @@ import ItemCount from "./ItemCount"
 const Item = ({ id, title, description, price, pictureUrl, stock }) => {
 
   const onAdd = () => {
-    // La funcion se deje ejecutar si hay stocl, de lo contrario no!
     console.log({ id, title, stock });
     stock < 1 ? console.log('No hay stock.') : console.log('Hay Stock!');;
   }

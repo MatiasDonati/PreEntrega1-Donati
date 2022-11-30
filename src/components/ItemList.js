@@ -27,7 +27,7 @@ const ItemList = () => {
         {
             id: 3,
             title: 'Ellas',
-            stock: 0,
+            stock: 5,
             price: 2000,
             description: `Las manos humanas tienen varias formas, la predominante no es esta`,
             pictureUrl: 'https://drive.google.com/uc?export=view&id=1DG2_VA_CQaEnybEZp5eBkUP61EqPCrlh'

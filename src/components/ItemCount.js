@@ -28,7 +28,8 @@ const ItemCount = ({ stock }) => {
                 <div className="flex justify-center space-x-4">
                     <button onClick={restaClick} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">-</button>
                     <p>{contador}</p>
-                    <button onClick={cuentaClick} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">+</button>
+                    {contador == stock ? <button disabled={true} onClick={cuentaClick} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">+</button> : <button onClick={cuentaClick} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">+</button>}
+
                 </div>
                 <br />
                 <button onClick={reset} className="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Volver a Cero</button>
