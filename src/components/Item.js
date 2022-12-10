@@ -1,5 +1,6 @@
 import { useState } from "react"
 import ItemCount from "./ItemCount"
+import { Link } from "react-router-dom"
 
 const Item = ({ id, title, description, price, pictureUrl, stock }) => {
 
@@ -21,6 +22,7 @@ const Item = ({ id, title, description, price, pictureUrl, stock }) => {
               <ItemCount stock={stock}/>
               <button onClick={onAdd} className="btn btn-primary">Comprar</button>
             </div>
+            <Link to={`/ilustraciones/${id}`} className='btn'>Ver detalle</Link>
           </div>
         </div>
       </div>

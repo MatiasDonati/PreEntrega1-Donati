@@ -1,12 +1,14 @@
 import CartWidget from "./CartWidget"
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
   return (
     <div className="navbar bg-base-100">
         <div className="flex-1">
-            <a className="btn btn-ghost normal-case text-xl">Ilustraciones</a>
-            <a className="btn btn-ghost normal-case text-xl">Arte Digital</a>
-            <a className="btn btn-ghost normal-case text-xl">Pinturas</a>
+            <Link  to='/' className="btn btn-ghost normal-case text-xl">Yanilog</Link>
+            <Link  to='/ilustraciones' className="btn btn-ghost normal-case text-xl">Ilustraciones/Arte Digital</Link>
+            <Link  to='/pinturas' className="btn btn-ghost normal-case text-xl">Pinturas</Link>
+            {/* <a className="btn btn-ghost normal-case text-xl">Arte Digital</a> */}
         </div>
         {/* <div className="flex-1">
             <a className="btn btn-ghost normal-case text-xl">Yanilog</a>
