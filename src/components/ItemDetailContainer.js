@@ -29,7 +29,7 @@ const ItemDetailContainer = ({ stock }) => {
 
   return (
     <>
-      <div className="p-5">
+      <div className="p-10">
         <div className="card w-96 glass">
           <figure><img src={detalle.pictureUrl} alt="img" /></figure>
           <div className="card-body">

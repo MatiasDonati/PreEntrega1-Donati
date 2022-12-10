@@ -42,7 +42,7 @@ const PRODUCTS = [
     {
         id: 5,
         title: 'Gentes',
-        category: 'Pinturas',
+        category: 'Pintura',
         stock: 1,
         price: 2400,
         description: `Pintura sobre piedra blanca, forma irregular`,
@@ -51,7 +51,7 @@ const PRODUCTS = [
     {
         id: 6,
         title: 'Handas',
-        category: 'Pinturas',
+        category: 'Pintura',
         stock: 4,
         price: 4200,
         description: `Manos unidas, oleo sobre tela`,
@@ -60,7 +60,7 @@ const PRODUCTS = [
     {
         id: 7,
         title: 'Sueños de gato',
-        category: 'Pinturas',
+        category: 'Pintura',
         stock: 4,
         price: 4200,
         description: `Acuarela y Oleo sobre lienzo de tela, sueños de gato`,
@@ -69,7 +69,7 @@ const PRODUCTS = [
     {
         id: 8,
         title: 'Diosa',
-        category: 'Pinturas',
+        category: 'Pintura',
         stock: 4,
         price: 4200,
         description: `Acuarela y Oleo sobre lienzo de tela, Diosa`,

@@ -2,7 +2,7 @@ import { useState } from "react"
 import ItemCount from "./ItemCount"
 import { Link } from "react-router-dom"
 
-const Item = ({ id, title, description, price, pictureUrl, stock, category }) => {
+const ItemPinturas = ({ id, title, description, price, pictureUrl, stock, category }) => {
 
   const onAdd = () => {
     console.log({ id, title, stock });
@@ -23,11 +23,11 @@ const Item = ({ id, title, description, price, pictureUrl, stock, category }) =>
               <ItemCount stock={stock}/>
               <button onClick={onAdd} className="btn btn-primary">Comprar</button>
             </div>
-            <Link to={`/ilustraciones/${id}`} className='btn'>Ver detalle</Link>
+            <Link to={`/pinturas/${id}`} className='btn'>Ver detalle</Link>
           </div>
         </div>
       </div>
     </>
   )
 }
-export default Item
+export default ItemPinturas

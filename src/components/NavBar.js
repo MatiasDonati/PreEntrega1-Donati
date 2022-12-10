@@ -8,6 +8,7 @@ const NavBar = () => {
             <Link  to='/' className="btn btn-ghost normal-case text-xl">Yanilog</Link>
             <Link  to='/ilustraciones' className="btn btn-ghost normal-case text-xl">Ilustraciones/Arte Digital</Link>
             <Link  to='/pinturas' className="btn btn-ghost normal-case text-xl">Pinturas</Link>
+            <Link  to='/rick' className="btn btn-ghost normal-case text-xl">RickAndMortyTest</Link>
             {/* <a className="btn btn-ghost normal-case text-xl">Arte Digital</a> */}
         </div>
         {/* <div className="flex-1">

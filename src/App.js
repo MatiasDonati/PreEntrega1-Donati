@@ -9,11 +9,13 @@ import ItemDetail from './components/ItemDetail';
 import Item from './components/Item';
 import CharDetail from './components/rickandmorty/CharDetail';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import Ilustraciones from './components/Ilustraciones';
+import Pinturas from './components/Pinturas';
 
 
 function App() {
 
-  const saludo = 'Bienvenidos a la Tienda!'
+  const saludo = 'Bienvenidxs!'
 
   return (
     <BrowserRouter>
@@ -25,10 +27,10 @@ function App() {
         <Route path='/colors' element={<InputsColors />} />
         <Route path='/cart' element={'CARRITO'} />
         <Route path='/checkout' element={'FORMULARIO DE COMPRA'} />
-        <Route path='/ilustraciones/' element={'ILUSTRACIONES'} />
+        <Route path='/ilustraciones' element={<Ilustraciones/>} />
         <Route path='/ilustraciones/:id' element={<ItemDetailContainer />} />
-        <Route path='/pinturas' element={'PINTURAS'} />
-        <Route path='/pinturas/:id' element={'DETALLE DE PINTURAS'} />
+        <Route path='/pinturas' element={<Pinturas />} />
+        <Route path='/pinturas/:id' element={<ItemDetailContainer />} />
       </Routes>
       <Footer />
     </BrowserRouter>
