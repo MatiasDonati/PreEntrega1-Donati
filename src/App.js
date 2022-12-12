@@ -20,14 +20,15 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes >
-        <Route path='/' element={<Inicio />} />
-        <Route path='/category/:id' element={<ItemListContainer greeting={saludo} />} />
+        {/* <Route path='/' element={<Inicio />} /> */}
+        <Route path='/' element={<ItemListContainer greeting={saludo} />} />
         <Route path='/item/:id' element={<ItemDetailContainer />} />
         <Route path='//category' element={<Category />} />
-        <Route path='/category/obracompleta' element={<ObraCompleta />} />
+        <Route path='/category/:id' element={<ItemListContainer greeting={saludo} />} />
         <Route path='/bio' element={<Bio />} />
         <Route path='/cart' element={'CARRITO'} />
         <Route path='/checkout' element={'FORMULARIO DE COMPRA'} />
+        <Route path='/category/obracompleta' element={<ObraCompleta />} />
         {/* Tests */}
         <Route path='/rick' element={<CharList />} />
         <Route path='/rick/:charId' element={<CharDetail />} />

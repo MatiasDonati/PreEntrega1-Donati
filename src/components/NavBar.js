@@ -24,7 +24,7 @@ const NavBar = () => {
                 <div>
                     <Link to='/category/ilustracion' className="btn btn-ghost normal-case text-xl">Ilustraciones</Link>
                     <Link to='/category/pintura' className="btn btn-ghost normal-case text-xl">Pinturas</Link>
-                    <Link to='/category/obracompleta' className="btn btn-ghost normal-case text-xl">Toda la Obra</Link>
+                    {/* <Link to='/category/obracompleta' className="btn btn-ghost normal-case text-xl">Toda la Obra</Link> */}
                 </div>
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost normal-case text-xl">
