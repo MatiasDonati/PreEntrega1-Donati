@@ -2,15 +2,14 @@ import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import Footer from './components/Footer';
-import InputsColors from './components/InputsColors';
 import CharList from './components/rickandmorty/CharList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import ItemDetail from './components/ItemDetail';
-import Item from './components/Item';
 import CharDetail from './components/rickandmorty/CharDetail';
 import ItemDetailContainer from './components/ItemDetailContainer';
-import Ilustraciones from './components/Ilustraciones';
-import Pinturas from './components/Pinturas';
+import ObraCompleta from './components/ObraCompleta';
+import Bio from './components/Bio';
+import Category from './components/Category';
+import Inicio from './components/Inicio';
 
 
 function App() {
@@ -21,20 +20,21 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes >
-        <Route path='/' element={<ItemListContainer greeting={saludo} />} />
-        <Route path='/rick' element={<CharList />} />
-        <Route path='/rick/:charId' element={<CharDetail />} />
-        <Route path='/colors' element={<InputsColors />} />
+        <Route path='/' element={<Inicio />} />
+        <Route path='/category/:id' element={<ItemListContainer greeting={saludo} />} />
+        <Route path='/item/:id' element={<ItemDetailContainer />} />
+        <Route path='//category' element={<Category />} />
+        <Route path='/category/obracompleta' element={<ObraCompleta />} />
+        <Route path='/bio' element={<Bio />} />
         <Route path='/cart' element={'CARRITO'} />
         <Route path='/checkout' element={'FORMULARIO DE COMPRA'} />
-        <Route path='/ilustraciones' element={<Ilustraciones/>} />
-        <Route path='/ilustraciones/:id' element={<ItemDetailContainer />} />
-        <Route path='/pinturas' element={<Pinturas />} />
-        <Route path='/pinturas/:id' element={<ItemDetailContainer />} />
+        {/* Tests */}
+        <Route path='/rick' element={<CharList />} />
+        <Route path='/rick/:charId' element={<CharDetail />} />
+        {/* Tests */}
       </Routes>
       <Footer />
     </BrowserRouter>
-
   );
 }
 

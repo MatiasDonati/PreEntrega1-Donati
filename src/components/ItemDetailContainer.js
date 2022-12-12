@@ -33,7 +33,7 @@ const ItemDetailContainer = ({ stock }) => {
         <div className="card w-96 glass">
           <figure><img src={detalle.pictureUrl} alt="img" /></figure>
           <div className="card-body">
-            <strong className="text-center">Id: {id}</strong>
+            {/* <strong className="text-center">Id: {id}</strong> */}
             <h2 className="card-title">{detalle.title}</h2>
             <p>{detalle.description}</p>
             <p>${detalle.price}</p>

@@ -23,7 +23,7 @@ const Item = ({ id, title, description, price, pictureUrl, stock, category }) =>
               <ItemCount stock={stock}/>
               <button onClick={onAdd} className="btn btn-primary">Comprar</button>
             </div>
-            <Link to={`/ilustraciones/${id}`} className='btn'>Ver detalle</Link>
+            <Link to={`/item/${id}`} className='btn'>Ver detalle</Link>
           </div>
         </div>
       </div>
