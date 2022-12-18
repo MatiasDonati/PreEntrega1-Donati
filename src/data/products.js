@@ -11,7 +11,8 @@ const PRODUCTS = [
         stock: 12,
         price: 1200,
         description: 'Arte digital donde los pies son el foco del a acción',
-        pictureUrl: 'https://drive.google.com/uc?export=view&id=16C1wM1FVC4vMwQ4WGE5UzmlNZLQFOtVA'
+        pictureUrl: 'https://drive.google.com/uc?export=view&id=16C1wM1FVC4vMwQ4WGE5UzmlNZLQFOtVA',
+        inCart: false
     },
     {
         id: 2,
@@ -20,7 +21,8 @@ const PRODUCTS = [
         stock: 14,
         price: 1400,
         description: `Entre lineas a veces se codifican señales, entre locutores se entienden`,
-        pictureUrl: 'https://drive.google.com/uc?export=view&id=1KfgDJPnKZ3F6Eme0jHzcBCfZbENgF7Vh'
+        pictureUrl: 'https://drive.google.com/uc?export=view&id=1KfgDJPnKZ3F6Eme0jHzcBCfZbENgF7Vh',
+        inCart: false
     },
     {
         id: 3,
@@ -29,7 +31,8 @@ const PRODUCTS = [
         stock: 5,
         price: 2000,
         description: `Las manos humanas tienen varias formas, la predominante no es esta`,
-        pictureUrl: 'https://drive.google.com/uc?export=view&id=1DG2_VA_CQaEnybEZp5eBkUP61EqPCrlh'
+        pictureUrl: 'https://drive.google.com/uc?export=view&id=1DG2_VA_CQaEnybEZp5eBkUP61EqPCrlh',
+        inCart: false
     },
     {
         id: 4,
@@ -38,7 +41,8 @@ const PRODUCTS = [
         stock: 15,
         price: 1000,
         description: `No hace falta explicar nada`,
-        pictureUrl: 'https://drive.google.com/uc?export=view&id=1Vh7unNSIcbAlXlDq3yIDCk4QDHBWpzxt'
+        pictureUrl: 'https://drive.google.com/uc?export=view&id=1Vh7unNSIcbAlXlDq3yIDCk4QDHBWpzxt',
+        inCart: false
     },
     {
         id: 5,
@@ -47,7 +51,8 @@ const PRODUCTS = [
         stock: 1,
         price: 2400,
         description: `2 sobre piedra blanca, forma irregular`,
-        pictureUrl: 'http://drive.google.com/uc?export=view&id=1zXeRaJkBPOo83HED2dS74UBZXTw1ibPy'
+        pictureUrl: 'http://drive.google.com/uc?export=view&id=1zXeRaJkBPOo83HED2dS74UBZXTw1ibPy',
+        inCart: false
     },
     {
         id: 6,
@@ -56,7 +61,8 @@ const PRODUCTS = [
         stock: 4,
         price: 4200,
         description: `Manos unidas, oleo sobre tela`,
-        pictureUrl: 'http://drive.google.com/uc?export=view&id=1I_1oy6dBp63i9I6crg8-vynWX0dWjmZo'
+        pictureUrl: 'http://drive.google.com/uc?export=view&id=1I_1oy6dBp63i9I6crg8-vynWX0dWjmZo',
+        inCart: false
     },
     {
         id: 7,
@@ -65,7 +71,8 @@ const PRODUCTS = [
         stock: 4,
         price: 4200,
         description: `Acuarela y Oleo sobre lienzo de tela, sueños de gato`,
-        pictureUrl: 'http://drive.google.com/uc?export=view&id=1S9tpB3ejXdzrvBis5lJ2aZJXeTxmSc1T'
+        pictureUrl: 'http://drive.google.com/uc?export=view&id=1S9tpB3ejXdzrvBis5lJ2aZJXeTxmSc1T',
+        inCart: false
     },
     {
         id: 8,
@@ -74,7 +81,8 @@ const PRODUCTS = [
         stock: 4,
         price: 4200,
         description: `Acuarela y Oleo sobre lienzo de tela, Diosa`,
-        pictureUrl: 'http://drive.google.com/uc?export=view&id=1ngReS0vZ547pk0Ho1ontI2d3A7ZaHHZT'
+        pictureUrl: 'http://drive.google.com/uc?export=view&id=1ngReS0vZ547pk0Ho1ontI2d3A7ZaHHZT',
+        inCart: false
     }
 ]
 

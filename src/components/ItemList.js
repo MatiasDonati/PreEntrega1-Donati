@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react"
 import { PRODUCTS } from "../data/products";
 import Item from "./Item";
-import yanilog1 from "../images/yanilog1.jpg"
-import piesYaniLog from '../images/piesYaniLog.jpeg'
+import GridLoader from "react-spinners/ClipLoader";
 
-
-const ItemList = ({id}) => {
+const ItemList = ({ id }) => {
 
     console.log(id);
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-
+        setLoading(true)
         getProducts().then(response => {
             setProducts(response)
         })
@@ -20,22 +19,36 @@ const ItemList = ({id}) => {
     const getProducts = () => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                if(id){
+                if (id) {
                     resolve(PRODUCTS.filter(product => product.category == id))
-                }else{
+                } else {
                     resolve(PRODUCTS)
                 }
-            }, 250);
+                setLoading(false)
+            }, 2000);
         })
     }
+
+    console.log(products);
 
     return (
         <>
             <div className="text-center p-14">
-            <h1><strong>{id}</strong></h1>
-                <div className="flex flex-wrap p-10">
-                    {products.map(product => <Item key={product.id} {...product} />)}
-                </div>
+                {loading ?
+                    <div className="p-20">
+                        <GridLoader
+                            color="#724b80"
+                            cssOverride={{}}
+                            loading
+                            margin={5}
+                            size={50}
+                        />
+                    </div>
+                    :
+                    <div className="flex flex-wrap p-10">
+                        {products.map(product => <Item key={product.id} {...product} />)}
+                    </div>
+                }
             </div>
         </>
     )
