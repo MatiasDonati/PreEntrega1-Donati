@@ -1,8 +1,12 @@
 import CartWidget from "./CartWidget"
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import { useCart } from "../context/CartContext"
 
 const NavBar = () => {
+
+
+  const { carroVacio } = useCart()
 
     const [categorias, setCategorias] = useState(false)
 
@@ -40,7 +44,7 @@ const NavBar = () => {
             <div className="flex-none">
                 <div className="dropdown dropdown-end">
                     {/* Componente CartWidget dentro de NavBar */}
-                    <CartWidget />
+                    {carroVacio==false && <CartWidget />}
                 </div>
 
                 <div className="dropdown dropdown-end">
