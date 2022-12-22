@@ -40,7 +40,7 @@ const ItemList = () => {
                 <p>{item.description}</p>
                 <img src={item.pictureUrl}></img>
             </>}
-            {items &&  items.map(i => <li>{i.title}</li>)}
+            {items &&  items.map(i => <li key={i.id}>{i.title}</li>)}
         </div>
     )
 }
