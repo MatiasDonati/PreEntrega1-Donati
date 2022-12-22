@@ -25,15 +25,13 @@ const CartContextProvider = ({ children }) => {
     productoRepetido ? item.inCart = true : setItems(items => items.concat(item))
   }
 
-
-  console.log(items);
-
   const clearCart = () => {
     setItems([])
     setCarroVacio(true)
     items.map(item => item.inCart=false)
   }
-
+  console.log(items.length);
+  
   const eliminarDelCart = (id) => {
     console.log(id);
     setItems(items.filter(items => items.id != id))
@@ -43,6 +41,8 @@ const CartContextProvider = ({ children }) => {
     const productoEliminado = items.find(item => item.id = id)
     productoEliminado.inCart = false
   }
+
+  console.log(items);
 
   const context = {
     items: items,

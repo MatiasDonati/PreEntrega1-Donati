@@ -13,6 +13,7 @@ import Inicio from './components/Inicio';
 import Eventos from './components/Eventos';
 import React, { useState } from 'react';
 import Cart from './components/Cart';
+import ItemList from './components/fromFireBase/ItemList';
 
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
         <Route path='/cart' element={<Cart /> } />
         <Route path='/checkout' element={'FORMULARIO DE COMPRA'} />
         <Route path='/category/obracompleta' element={<ObraCompleta />} />
+        {/* FIREBASE */}
+        <Route path='/itemFireBase' element={<ItemList />} />
         {/* Tests */}
         <Route path='/rick' element={<CharList />} />
         <Route path='/rick/:charId' element={<CharDetail />} />
