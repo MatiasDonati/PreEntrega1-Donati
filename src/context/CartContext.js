@@ -6,6 +6,10 @@ const CartContext = createContext({
   addToCart: () => { },
   clearCart: () => { },
   eliminarDelCart: () => { },
+  sumarCantidad: () => { },
+  restarCantidad: () => { },
+  reset: () => { },
+  contador: Number
 })
 
 const useCart = () => {
@@ -16,6 +20,7 @@ const CartContextProvider = ({ children }) => {
 
   const [items, setItems] = useState([])
   const [carroVacio, setCarroVacio] = useState(true)
+  const [contador, setContador] = useState(1)
 
 
   const addToCart = (item) => {
@@ -28,10 +33,9 @@ const CartContextProvider = ({ children }) => {
   const clearCart = () => {
     setItems([])
     setCarroVacio(true)
-    items.map(item => item.inCart=false)
+    items.map(item => item.inCart = false)
   }
-  console.log(items.length);
-  
+
   const eliminarDelCart = (id) => {
     setItems(items.filter(items => items.id != id))
     items.length == 1 ? setCarroVacio(true) : setCarroVacio(false)
@@ -39,15 +43,32 @@ const CartContextProvider = ({ children }) => {
     productoEliminado.inCart = false
   }
 
-  console.log(items);
+  const sumarCantidad = () => {
+    setContador(contador + 1)
+  }
+
+  const restarCantidad = () => {
+    if (contador != 1) {
+      setContador(contador - 1)
+    }
+  }
+  const reset = () => {
+    setContador(1)
+  }
 
   const context = {
     items: items,
     carroVacio: carroVacio,
     addToCart: addToCart,
     clearCart: clearCart,
-    eliminarDelCart: eliminarDelCart
+    eliminarDelCart: eliminarDelCart,
+    sumarCantidad: sumarCantidad,
+    restarCantidad: restarCantidad,
+    reset: reset,
+    contador: contador
   }
+
+
 
   return (
     <CartContext.Provider value={context}>

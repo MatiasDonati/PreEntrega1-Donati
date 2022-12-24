@@ -15,7 +15,6 @@ import React, { useState } from 'react';
 import Cart from './components/Cart';
 import ItemList from './components/fromFireBase/ItemList';
 
-
 function App() {
 
   const saludo = 'Bienvenidxs!'
