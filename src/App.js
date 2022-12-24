@@ -30,7 +30,7 @@ function App() {
         <Route path='/category' element={<Category />} />
         <Route path='/category/:id' element={<ItemListContainer greeting={saludo} />} />
         <Route path='/bio' element={<Bio />} />
-        <Route path='/cart' element={<Cart /> } />
+        <Route path='/cart' element={<Cart />} />
         <Route path='/checkout' element={'FORMULARIO DE COMPRA'} />
         <Route path='/category/obracompleta' element={<ObraCompleta />} />
         {/* FIREBASE */}

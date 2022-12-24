@@ -7,9 +7,10 @@ import ProductoEnCart from "./ProductoEnCart"
 const Cart = () => {
 
   const { items, carroVacio, clearCart } = useCart()
-  console.log(carroVacio);
 
   let totalPrice = items.reduce((acc, item) => acc + item.price, 0);
+
+  let totalCantidad = items.length
 
   const makeOrder = () => {
     const user = { name: 'Juan', phone: 432432, email: 'juan@gmail.com' }
@@ -59,13 +60,18 @@ const Cart = () => {
     batch.commit()
   }
 
-  console.log(items.length);
+  console.log(carroVacio);
 
   return (
     <div className="m-10 text-xl">
       <strong>Carrito de Compras</strong>
       <br />
-      {totalPrice > 0 && <strong>Precio total: $ {totalPrice}</strong>}
+      {totalPrice > 0
+        &&
+        <>
+          <strong>Precio total: $ {totalPrice}</strong>
+          {totalCantidad == 1 ? <div>Cantidad: {totalCantidad} Obra</div> : <div>Cantidad: {totalCantidad} Obras</div>}
+        </>}
       {totalPrice >= 5000 && <><p>Envio gratis!</p><p className="text-sm">Superaste los $5000!</p></>}
       <p>{items.map(product => <ProductoEnCart key={product.id} {...product} />)}</p>
       {carroVacio == true ?

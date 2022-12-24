@@ -4,32 +4,29 @@ import { CartContext } from "../../context/CartContext"
 
 const CharDetail = () => {
 
-  
+  const [char, setChar] = useState()
+  const { charId } = useParams()
 
-    const [char, setChar] = useState()
-    const {charId} = useParams()
+  // const darkMode = useContext(CartContext)
 
-    // const darkMode = useContext(CartContext)
+  useEffect(() => {
+    getCharDetail()
+  }, [charId])
 
-    useEffect(()=>{
-        getCharDetail()
-    },[charId])
-
-    const getCharDetail = async () => {
-        const URL = 'https://rickandmortyapi.com/api/character/'
-        const response = await fetch(URL + charId)
-        const data = await response.json()
-        console.log(data);
-        setChar(data)
-    }
+  const getCharDetail = async () => {
+    const URL = 'https://rickandmortyapi.com/api/character/'
+    const response = await fetch(URL + charId)
+    const data = await response.json()
+    setChar(data)
+  }
 
 
 
   return (
     <>
-    <div>CharDetail {charId}</div>
-    <div> { JSON.stringify(char)}</div>
-    {/* <p className="text-xl">DarkMode {darkMode? ' on' : ' off'}</p> */}
+      <div>CharDetail {charId}</div>
+      <div> {JSON.stringify(char)}</div>
+      {/* <p className="text-xl">DarkMode {darkMode? ' on' : ' off'}</p> */}
     </>
   )
 }

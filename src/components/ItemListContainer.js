@@ -4,7 +4,6 @@ import ItemList from "./ItemList"
 const ItemListContainer = ( { greeting } ) => {
 
   const {id} = useParams()
-  console.log(id);
 
   return (
     <>

@@ -5,7 +5,6 @@ import GridLoader from "react-spinners/ClipLoader";
 
 const ItemList = ({ id }) => {
 
-    console.log(id);
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(false)
 
@@ -28,8 +27,6 @@ const ItemList = ({ id }) => {
             }, 2000);
         })
     }
-
-    console.log(products);
 
     return (
         <>

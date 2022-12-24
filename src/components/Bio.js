@@ -8,7 +8,6 @@ const Bio = () => {
 
     const [products, setProducts] = useState([])
     const [boton, setBoton] = useState(false)
-    console.log(boton);
 
     useEffect(() => {
         getProducts().then(response => {

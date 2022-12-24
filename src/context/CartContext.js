@@ -33,11 +33,8 @@ const CartContextProvider = ({ children }) => {
   console.log(items.length);
   
   const eliminarDelCart = (id) => {
-    console.log(id);
     setItems(items.filter(items => items.id != id))
-    if (items.length > 0) {
-      setCarroVacio(true)
-    }
+    items.length == 1 ? setCarroVacio(true) : setCarroVacio(false)
     const productoEliminado = items.find(item => item.id = id)
     productoEliminado.inCart = false
   }

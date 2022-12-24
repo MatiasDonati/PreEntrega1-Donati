@@ -16,7 +16,6 @@ const ItemCount = ({ stock }) => {
     }
 
     const reset = () => {
-        console.log('Se Reseteo');
         setContador(1)
     }
 

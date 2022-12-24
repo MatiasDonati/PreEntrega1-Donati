@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 const ItemPinturas = ({ id, title, description, price, pictureUrl, stock, category }) => {
 
   const onAdd = () => {
-    console.log({ id, title, stock });
     stock < 1 ? console.log('No hay stock.') : console.log('Hay Stock!');;
   }
 

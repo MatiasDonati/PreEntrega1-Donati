@@ -8,7 +8,6 @@ const Category = () => {
 
     const [products, setProducts] = useState([])
     const [ver, setVer] = useState(false)
-    console.log(ver);
 
     useEffect(() => {
         getProducts().then(response => {
@@ -25,18 +24,13 @@ const Category = () => {
     }
 
     const verIlustracion = () =>{
-        console.log('click Ilustracion');
         setProducts(PRODUCTS.filter(product => product.category == 'ilustracion'))
         setVer(true)
     }
     const verPintura = () =>{
-        console.log('click Pintura');
         setProducts(PRODUCTS.filter(product => product.category == 'pintura'))
         setVer(true)
     }
-
-    console.log(products);
-
 
     return (
         <>

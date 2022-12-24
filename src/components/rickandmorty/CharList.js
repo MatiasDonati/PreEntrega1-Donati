@@ -30,8 +30,6 @@ const CharList = () => {
 
     const [verPersonajes, setVerPersonajes] = useState(false)
 
-    console.log(verPersonajes);
-
     useEffect(() => {
         setVerPersonajes(false)
     }, [])
@@ -47,8 +45,6 @@ const CharList = () => {
     useEffect(() => {
         setBoton(false)
     }, [])
-
-    console.log(boton);
 
     return (
         <div className="text-center">
