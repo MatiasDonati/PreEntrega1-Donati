@@ -1,7 +1,5 @@
 import { useEffect } from "react"
 import { useCart } from "../context/CartContext"
-import Item from "./Item"
-import ItemCount from "./ItemCount"
 
 const ProductoEnCart = ({ pictureUrl, title, price, stock, id, inCart, contador, cantidad}) => {
 
