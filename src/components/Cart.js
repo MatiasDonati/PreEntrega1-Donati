@@ -6,11 +6,11 @@ import ProductoEnCart from "./ProductoEnCart"
 
 const Cart = () => {
 
-  const { items, carroVacio, clearCart } = useCart()
+  const { items, carroVacio, clearCart, contador } = useCart()
 
-  let totalPrice = items.reduce((acc, item) => acc + item.price, 0);
+  let totalPrice = items.reduce((acc, item) => acc + (item.price * item.cantidad), 0);
 
-  let totalCantidad = items.length
+  let totalCantidad = items.reduce((acc, item) => acc + item.cantidad, 0);
 
   const makeOrder = () => {
     const user = { name: 'Juan', phone: 432432, email: 'juan@gmail.com' }
@@ -60,7 +60,7 @@ const Cart = () => {
     batch.commit()
   }
 
-  console.log(carroVacio);
+
 
   return (
     <div className="m-10 text-xl">
@@ -73,22 +73,23 @@ const Cart = () => {
           {totalCantidad == 1 ? <div>Cantidad: {totalCantidad} Obra</div> : <div>Cantidad: {totalCantidad} Obras</div>}
         </>}
       {totalPrice >= 5000 && <><p>Envio gratis!</p><p className="text-sm">Superaste los $5000!</p></>}
-      <p>{items.map(product => <ProductoEnCart key={product.id} {...product} />)}</p>
-      {carroVacio == true ?
-        <>
-          <p>El carrito se encuentra vacío</p>
-          <Link to='/'><button className="btn">Ir a comprar</button></Link>
-        </>
-        :
-        <>
-          <button className="btn" onClick={clearCart}>Vaciar Carrito</button>
-          <br />
-          <br />
-          <button className="btn" onClick={makeOrder}>Comprar</button>
-          <div>Dar id de la orden al cliente</div>
-          <button className="btn" onClick={editOrderHandler}>Actualizar Compra</button>
-          <button className="btn" onClick={makeBatch}>Batch</button>
-        </>
+      <p>{items.map(product => <ProductoEnCart key={product.id} {...product} contador={contador} />)}</p>
+      {
+        carroVacio == true ?
+          <>
+            <p>El carrito se encuentra vacío</p>
+            <Link to='/'><button className="btn">Ir a comprar</button></Link>
+          </>
+          :
+          <>
+            <button className="btn" onClick={clearCart}>Vaciar Carrito</button>
+            <br />
+            <br />
+            <button className="btn" onClick={makeOrder}>Comprar</button>
+            <div>Dar id de la orden al cliente</div>
+            <button className="btn" onClick={editOrderHandler}>Actualizar Compra</button>
+            <button className="btn" onClick={makeBatch}>Batch</button>
+          </>
       }
     </div>
   )

@@ -4,10 +4,6 @@ import { Link } from "react-router-dom"
 
 const Item = ({ id, title, description, price, pictureUrl, stock, category, loading }) => {
 
-  const prueba = () => {
-    console.log(`Click en "Ver Detalle" del item con id ${id}`);
-  }
-
   return (
     <>
       <div className="p-2">
@@ -21,7 +17,7 @@ const Item = ({ id, title, description, price, pictureUrl, stock, category, load
             <div className="card-actions justify-end">
               {/* <ItemCount stock={stock}/> */}
             </div>
-            <Link to={`/item/${id}`} onClick={prueba} className='btn'>Ver detalle</Link>
+            <Link to={`/item/${id}`} className='btn'>Ver detalle</Link>
           </div>
         </div>
       </div>

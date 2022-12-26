@@ -32,7 +32,6 @@ const ItemDetailContainer = ({ stock }) => {
   }
   const onAdd = () => {
     setclickOnAdd(true)
-    console.log(`Se agregaria al CARRITO el prodcuto "${detalle.title}"`);
   }
 
   const addHandler = () => {

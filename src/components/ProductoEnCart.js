@@ -1,7 +1,7 @@
 import { useCart } from "../context/CartContext"
-import Item from "./Item"
+import ItemCount from "./ItemCount"
 
-const ProductoEnCart = ({ pictureUrl, title, price, stock, id, inCart }) => {
+const ProductoEnCart = ({ pictureUrl, title, price, stock, id, inCart, contador, cantidad }) => {
 
     const { eliminarDelCart } = useCart()
 
@@ -17,7 +17,8 @@ const ProductoEnCart = ({ pictureUrl, title, price, stock, id, inCart }) => {
                     <div className="card-body">
                         <h2 className="card-title">"{title}"</h2>
                         <p>${price}</p>
-                        {inCart==true && <p className="text-sm">Ya estaba Agregado</p>}
+                        <p>Cantidad: {cantidad}</p>
+                        {/* {inCart==true && <p className="text-sm">Ya estaba Agregado</p>} */}
                     </div>
                     {price > 2000 && <p className="p-5 text-base">Envio gratis</p>}
                     <button className="btn" onClick={borrarDelCarro}>Eliminar del Carrito</button>

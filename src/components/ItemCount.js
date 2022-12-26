@@ -3,9 +3,7 @@ import { useCart } from "../context/CartContext";
 
 const ItemCount = ({ stock }) => {
 
-    const { sumarCantidad,restarCantidad, reset, contador } = useCart()
-
-
+    const { sumarCantidad, restarCantidad, reset, contador } = useCart()
 
     return (
         <>
