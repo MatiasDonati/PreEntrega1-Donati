@@ -64,7 +64,7 @@ const Cart = () => {
 
   return (
     <div className="m-10 text-xl">
-      <strong>Carrito de Compras</strong>
+      <strong className="content-center">Carrito de Compras</strong>
       <br />
       {totalPrice > 0
         &&
@@ -73,7 +73,7 @@ const Cart = () => {
           {totalCantidad == 1 ? <div>Cantidad: {totalCantidad} Obra</div> : <div>Cantidad: {totalCantidad} Obras</div>}
         </>}
       {totalPrice >= 5000 && <><p>Envio gratis!</p><p className="text-sm">Superaste los $5000!</p></>}
-      <p>{items.map(product => <ProductoEnCart key={product.id} {...product} contador={contador} />)}</p>
+      {items.map(product => <ProductoEnCart key={product.id} {...product} contador={contador} />)}
       {
         carroVacio == true ?
           <>

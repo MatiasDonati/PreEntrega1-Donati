@@ -9,8 +9,6 @@ const CartContext = createContext({
   sumarCantidad: () => { },
   restarCantidadContador: () => { },
   reset: () => { },
-  agregarCantidad: () => { },
-  restarCantidad: () => { },
   contador: Number
 })
 
@@ -26,7 +24,6 @@ const CartContextProvider = ({ children }) => {
 
   const addToCart = (item) => {
     setCarroVacio(false)
-    // setItems( items => [...items, item] )
     const productoRepetido = items.find(items => items.id == item.id)
     productoRepetido ? item.inCart = true : setItems(items => items.concat(item))
     item.cantidad ? item.cantidad = item.cantidad + contador : item.cantidad = contador
@@ -61,22 +58,6 @@ const CartContextProvider = ({ children }) => {
     setContador(1)
   }
 
-  const agregarCantidad = (id) => {
-    console.log('click agregar');
-    const item = items.find(items => items.id = id)
-    item.cantidad++
-    console.log(item.cantidad);
-    setItems(items)
-  }
-
-  const restarCantidad = (id) => {
-    console.log('click restar');
-    const item = items.find(items => items.id = id)
-    item.cantidad--
-    console.log(item.cantidad);
-    setItems(items)
-  }
-
   const context = {
     items: items,
     carroVacio: carroVacio,
@@ -86,8 +67,6 @@ const CartContextProvider = ({ children }) => {
     sumarCantidad: sumarCantidad,
     restarCantidadContador: restarCantidadContador,
     reset: reset,
-    agregarCantidad: agregarCantidad,
-    restarCantidad: restarCantidad,
     contador: contador
   }
 

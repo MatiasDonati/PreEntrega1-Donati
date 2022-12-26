@@ -5,14 +5,7 @@ import { useCart } from "../context/CartContext"
 
 const NavBar = () => {
 
-
-  const { carroVacio } = useCart()
-
-    const [categorias, setCategorias] = useState(false)
-
-    const verOnoVer = () => {
-        categorias == false ? setCategorias(true) : setCategorias(false)
-    }
+    const { carroVacio } = useCart()
 
     return (
         <div className="navbar bg-base-100">
@@ -24,29 +17,22 @@ const NavBar = () => {
                 </div>
             </label>
             <div className="flex-1">
-                <Link to='/bio' className="btn btn-ghost normal-case text-xl">YanilogBio</Link>
+
                 <div>
                     <Link to='/category/ilustracion' className="btn btn-ghost normal-case text-xl">Ilustraciones</Link>
                     <Link to='/category/pintura' className="btn btn-ghost normal-case text-xl">Pinturas</Link>
-                    {/* <Link to='/category/obracompleta' className="btn btn-ghost normal-case text-xl">Toda la Obra</Link> */}
+                    <Link to='/bio' className="btn btn-ghost normal-case text-xl">YanilogBio</Link>
+                    <Link to="/category"><button className="btn btn-ghost normal-case text-xl">Categorías-UsandoEstados</button></Link>
                 </div>
-                <div className="dropdown dropdown-end">
-                    <label tabIndex={0} className="btn btn-ghost normal-case text-xl">
-                        <Link to="/category"><button onClick={verOnoVer}>Categorías-UsandoEstados</button></Link>
-                    </label>
-                </div>
-                {/* <Link to='/rick' className="btn btn-ghost normal-case text-xl">(RickAndMortyTest)</Link> */}
             </div>
             <div className="form-control">
                 <input type="text" placeholder="Buscar" className="input input-bordered" />
             </div>
-
             <div className="flex-none">
                 <div className="dropdown dropdown-end">
                     {/* Componente CartWidget dentro de NavBar */}
-                    {carroVacio==false && <CartWidget />}
+                    {carroVacio == false && <CartWidget />}
                 </div>
-
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
