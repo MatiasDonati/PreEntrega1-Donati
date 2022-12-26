@@ -7,8 +7,10 @@ const CartContext = createContext({
   clearCart: () => { },
   eliminarDelCart: () => { },
   sumarCantidad: () => { },
-  restarCantidad: () => { },
+  restarCantidadContador: () => { },
   reset: () => { },
+  agregarCantidad: () => { },
+  restarCantidad: () => { },
   contador: Number
 })
 
@@ -50,13 +52,29 @@ const CartContextProvider = ({ children }) => {
     setContador(contador + 1)
   }
 
-  const restarCantidad = () => {
+  const restarCantidadContador = () => {
     if (contador != 1) {
       setContador(contador - 1)
     }
   }
   const reset = () => {
     setContador(1)
+  }
+
+  const agregarCantidad = (id) => {
+    console.log('click agregar');
+    const item = items.find(items => items.id = id)
+    item.cantidad++
+    console.log(item.cantidad);
+    setItems(items)
+  }
+
+  const restarCantidad = (id) => {
+    console.log('click restar');
+    const item = items.find(items => items.id = id)
+    item.cantidad--
+    console.log(item.cantidad);
+    setItems(items)
   }
 
   const context = {
@@ -66,8 +84,10 @@ const CartContextProvider = ({ children }) => {
     clearCart: clearCart,
     eliminarDelCart: eliminarDelCart,
     sumarCantidad: sumarCantidad,
-    restarCantidad: restarCantidad,
+    restarCantidadContador: restarCantidadContador,
     reset: reset,
+    agregarCantidad: agregarCantidad,
+    restarCantidad: restarCantidad,
     contador: contador
   }
 
