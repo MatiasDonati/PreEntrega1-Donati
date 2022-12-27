@@ -59,6 +59,7 @@ const ItemDetailContainer = ({ stock }) => {
               <h2 className="card-title">{detalle.title}</h2>
               <p>{detalle.description}</p>
               <p>${detalle.price}</p>
+              <p>Stock: {detalle.stock}</p>
               <div className="card-actions justify-center">
                 {clickOnAdd == false ?
                   <ItemCount stock={detalle.stock} /> : <div></div>}

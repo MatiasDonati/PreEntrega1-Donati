@@ -1,8 +1,11 @@
 import { useState } from "react"
 import ItemCount from "./ItemCount"
 import { Link } from "react-router-dom"
+import { useCart } from "../context/CartContext"
 
 const Item = ({ id, title, description, price, pictureUrl, stock, category, loading }) => {
+
+  const { resetearContador } = useCart()
 
   return (
     <>
@@ -17,7 +20,7 @@ const Item = ({ id, title, description, price, pictureUrl, stock, category, load
             <div className="card-actions justify-end">
               {/* <ItemCount stock={stock}/> */}
             </div>
-            <Link to={`/item/${id}`} className='btn'>Ver detalle</Link>
+            <Link to={`/item/${id}`} onClick={resetearContador} className='btn'>Ver detalle</Link>
           </div>
         </div>
       </div>

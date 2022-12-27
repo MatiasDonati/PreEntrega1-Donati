@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getFirestore, doc, getDoc, collection, getDocs } from "firebase/firestore"
+import { getFirestore, doc, getDoc, collection, getDocs, where, query, limit } from "firebase/firestore"
 import { logEvent } from "firebase/analytics"
 import { async } from "@firebase/util"
 
@@ -8,10 +8,12 @@ const ItemList = () => {
 
     const [item, seItem] = useState()
     const [items, seItems] = useState()
+    const [itemCategoria, setItemCategoria] = useState()
 
     useEffect(() => {
         getItemData()
         getItems()
+        getCategory()
     }, [])
 
     const getItemData = () => {
@@ -26,8 +28,24 @@ const ItemList = () => {
         const db = getFirestore()
         const collectionRef = collection(db, 'items')
         const snapshot = await getDocs(collectionRef)
-        seItems(snapshot.docs.map(d => ({ id: d.data, ...d.data() })))
+        seItems(snapshot.docs.map(doc => ({ id: doc.data, ...doc.data() })))
     }
+
+    const getCategory = () => {
+        const categoria = 'pintura'
+        const db = getFirestore()
+        const q = query(collection(db, 'items'),
+        where('category', '==', categoria),limit())
+        getDocs(q).then((snapshot)=> {
+            if(snapshot.size === 0){
+                console.log('No hay resultados');
+            }
+            setItemCategoria(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})))
+        })
+    }
+
+    console.log(items);
+    console.log(item);
 
     return (
         <div className="text-xl m-10">
@@ -41,6 +59,7 @@ const ItemList = () => {
                 <img src={item.pictureUrl}></img>
             </>}
             {items && items.map(i => <li key={i.id}>{i.title}</li>)}
+            {itemCategoria && itemCategoria.map(i=><li key={i.id}>{i.title} // {i.category}</li>)}
         </div>
     )
 }
