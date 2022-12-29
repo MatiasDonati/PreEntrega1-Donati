@@ -44,13 +44,10 @@ const ItemList = () => {
         })
     }
 
-    console.log(items);
-    console.log(item);
-
     return (
         <div className="text-xl m-10">
             <h1>
-                Producto destacado
+                Productos con Firebase
             </h1>
             {item && <>
                 <p>{item.title}</p>
