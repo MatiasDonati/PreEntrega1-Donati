@@ -9,11 +9,13 @@ const ItemList = () => {
     const [item, seItem] = useState()
     const [items, seItems] = useState()
     const [itemCategoria, setItemCategoria] = useState()
+    const [itemCategoria2, setItemCategoria2] = useState()
 
     useEffect(() => {
         getItemData()
         getItems()
         getCategory()
+        getCategory2()
     }, [])
 
     const getItemData = () => {
@@ -43,20 +45,40 @@ const ItemList = () => {
             setItemCategoria(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})))
         })
     }
+    const getCategory2 = () => {
+        const categoria = 'ilustracion'
+        const db = getFirestore()
+        const q = query(collection(db, 'items'),
+        where('category', '==', categoria),limit())
+        getDocs(q).then((snapshot)=> {
+            if(snapshot.size === 0){
+                console.log('No hay resultados');
+            }
+            setItemCategoria2(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})))
+        })
+    }
 
     return (
         <div className="text-xl m-10">
             <h1>
-                Productos con Firebase
+                Detalle de un producto
             </h1>
+            <br />
             {item && <>
                 <p>{item.title}</p>
                 <p>{item.price}</p>
                 <p>{item.description}</p>
                 <img src={item.pictureUrl}></img>
+                <br />
             </>}
-            {items && items.map(i => <li key={i.id}>{i.title}</li>)}
-            {itemCategoria && itemCategoria.map(i=><li key={i.id}>{i.title} // {i.category}</li>)}
+            <h1>Todos</h1>
+            {items && items.map(i => <li key={i.id}>Prodcutos Gral: "{i.title}" y su categoria es: {i.category}</li>)}
+            <br />
+            <h1>Filtrados por Pinturas</h1>
+            {itemCategoria && itemCategoria.map(i=><li key={i.id}>{i.title} // {i.category} -- filtrando por categoria: "{i.category.toUpperCase()}"</li>)}
+            <br />
+            <h1>Filtrados por Ilustraciones</h1>
+            {itemCategoria2 && itemCategoria2.map(i=><li key={i.id}>{i.title} // {i.category} -- filtrando por categori: "{i.category.toUpperCase()}"</li>)}
         </div>
     )
 }
