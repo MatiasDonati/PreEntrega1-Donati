@@ -5,9 +5,8 @@ const CartWidget = () => {
 
   const { items } = useCart()
 
-  let totalCantidad = items.length
+  let totalCantidad = items.reduce((acc, item) => acc + item.cantidad, 0);
 
-  // let totalPrice = items.reduce((acc, item) => acc + item.price, 0);
 
   return (
     <>

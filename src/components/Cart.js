@@ -70,12 +70,12 @@ const Cart = () => {
         &&
         <>
           <strong>Precio total: $ {totalPrice}</strong>
-          {totalCantidad == 1 ? <div>Cantidad: {totalCantidad} Obra</div> : <div>Cantidad: {totalCantidad} Obras</div>}
+          {totalCantidad === 1 ? <div>Cantidad: {totalCantidad} Obra</div> : <div>Cantidad: {totalCantidad} Obras</div>}
         </>}
       {totalPrice >= 5000 && <><p>Envio gratis!</p><p className="text-sm">Superaste los $5000!</p></>}
       {items.map(product => <ProductoEnCart key={product.id} {...product} contador={contador} totalPrice={totalPrice} />)}
       {
-        carroVacio == true ?
+        items.length === 0 ?
           <>
             <p>El carrito se encuentra vacío</p>
             <Link to='/'><button className="btn">Ir a comprar</button></Link>

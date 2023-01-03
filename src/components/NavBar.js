@@ -2,6 +2,7 @@ import CartWidget from "./CartWidget"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import { useCart } from "../context/CartContext"
+import ItemList from "./ItemList"
 
 const NavBar = () => {
 
@@ -31,7 +32,7 @@ const NavBar = () => {
             <div className="flex-none">
                 <div className="dropdown dropdown-end">
                     {/* Componente CartWidget dentro de NavBar */}
-                    {carroVacio == false && <CartWidget />}
+                    {ItemList.length > 0 && <CartWidget />}
                 </div>
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

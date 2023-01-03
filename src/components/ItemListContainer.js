@@ -1,14 +1,46 @@
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemList from "./ItemList"
+import { collection, getDocs, getFirestore, limit, query, where } from "firebase/firestore";
 
-const ItemListContainer = ( { greeting } ) => {
 
-  const {id} = useParams()
+const ItemListContainer = ({ greeting }) => {
+
+  const { id } = useParams()
+
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  const getItems = async () => {
+    const db = getFirestore()
+    const collectionRef = collection(db, 'items')
+    const snapshot = await getDocs(collectionRef)
+    setProducts(snapshot.docs.map(doc => ({ id: doc.data, ...doc.data() })))
+    setLoading(false)
+  }
+
+  const getCategory = () => {
+    const db = getFirestore()
+    const q = query(collection(db, 'items'),
+      where('category', '==', id), limit())
+    getDocs(q).then((snapshot) => {
+      if (snapshot.size === 0) {
+        console.log('No hay resultados');
+      }
+      setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+      setLoading(false)
+    })
+  }
+
+  useEffect(() => {
+    setLoading(true)
+    id ? getCategory() : getItems()
+  }, [id])
 
   return (
     <>
-    <div className='text-center'><strong>{greeting}</strong></div>
-    <ItemList id={id}/>
+      <div className='text-center'><strong>{greeting}</strong></div>
+      {products && <ItemList products={products} loading={loading} />}
     </>
   )
 }
