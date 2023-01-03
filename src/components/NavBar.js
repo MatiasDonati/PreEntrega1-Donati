@@ -6,7 +6,7 @@ import ItemList from "./ItemList"
 
 const NavBar = () => {
 
-    const { carroVacio } = useCart()
+    const { items } = useCart()
 
     return (
         <div className="navbar bg-base-100">
@@ -31,8 +31,7 @@ const NavBar = () => {
             </div>
             <div className="flex-none">
                 <div className="dropdown dropdown-end">
-                    {/* Componente CartWidget dentro de NavBar */}
-                    {ItemList.length > 0 && <CartWidget />}
+                    {items.length > 0 && <CartWidget />}
                 </div>
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
