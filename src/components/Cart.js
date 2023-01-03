@@ -6,7 +6,7 @@ import ProductoEnCart from "./ProductoEnCart"
 
 const Cart = () => {
 
-  const { items, carroVacio, clearCart, contador } = useCart()
+  const { items, clearCart, contador } = useCart()
 
   let totalPrice = items.reduce((acc, item) => acc + (item.price * item.cantidad), 0);
 
@@ -78,14 +78,14 @@ const Cart = () => {
         items.length === 0 ?
           <>
             <p>El carrito se encuentra vacío</p>
-            <Link to='/'><button className="btn">Ir a comprar</button></Link>
+            <Link to='/' ><button className="btn">Ir a comprar</button></Link>
           </>
           :
           <>
             <button className="btn" onClick={clearCart}>Vaciar Carrito</button>
             <br />
             <br />
-            <button className="btn" onClick={makeOrder}>Comprar</button>
+            <Link to='/checkout'><button className="btn" onClick={makeOrder}>Comprar</button></Link>
             <div>Dar id de la orden al cliente</div>
             <button className="btn" onClick={editOrderHandler}>Actualizar Compra</button>
             <button className="btn" onClick={makeBatch}>Batch</button>

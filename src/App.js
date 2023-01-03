@@ -14,6 +14,7 @@ import Eventos from './components/Eventos';
 import React, { useState } from 'react';
 import Cart from './components/Cart';
 import ItemList from './components/fromFireBase/ItemList';
+import Formulario from './components/Formulario';
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
         <Route path='/category/:id' element={<ItemListContainer greeting={saludo} />} />
         <Route path='/bio' element={<Bio />} />
         <Route path='/cart' element={<Cart />} />
-        <Route path='/checkout' element={'FORMULARIO DE COMPRA'} />
+        <Route path='/checkout' element={<Formulario />} />
         <Route path='/category/obracompleta' element={<ObraCompleta />} />
         {/* FIREBASE */}
         <Route path='/itemFireBase' element={<ItemList />} />
