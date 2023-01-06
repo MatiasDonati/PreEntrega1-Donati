@@ -33,7 +33,7 @@ const Category = () => {
     }
 
     return (
-        <>
+        <div className="pt-20">
             <div className="text-center">
                 <button onClick={verIlustracion} className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Ilustraciones</button>
                 <button onClick={verPintura} className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Pinturas</button>
@@ -52,7 +52,7 @@ const Category = () => {
                     <button className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Inicio</button>
                 </Link>
             </div>
-        </>
+        </div>
     )
 }
 export default Category

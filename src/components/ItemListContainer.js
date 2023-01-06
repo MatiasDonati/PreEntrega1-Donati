@@ -39,7 +39,7 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <>
-      <div className='text-center'><strong>{greeting}</strong></div>
+      <div className='text-center pt-20'><strong>{greeting}</strong></div>
       {products && <ItemList products={products} loading={loading} />}
     </>
   )

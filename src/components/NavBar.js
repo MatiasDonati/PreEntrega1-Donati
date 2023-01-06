@@ -9,7 +9,7 @@ const NavBar = () => {
     const { items } = useCart()
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 fixed z-10">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                     <Link to='/'>

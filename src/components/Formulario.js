@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import GridLoader from "react-spinners/ClipLoader";
 
-const Formulario = ({ }) => {
+const Formulario = ({ makeOrder, ordenDeCompra, clearCart }) => {
 
     const [name, setName] = useState("");
     const [apellido, setApellido] = useState("");
@@ -17,12 +19,14 @@ const Formulario = ({ }) => {
 
     const compraGenerada = () => {
         setOrden(true)
+        makeOrder()
+        clearCart()
     }
 
     return (
         <>
             {orden === false ?
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="pt-20 pl-10">
                     <div className="flex flex-col">
                         <label className="py-4">Nombre:
                             <input
@@ -60,11 +64,25 @@ const Formulario = ({ }) => {
                             />
                         </label>
                     </div>
+                    <br />
                     <button onClick={compraGenerada} className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full " type="submit">Generar Orden de Compra</button>
                 </form>
                 :
-                <p>Muchas gracias por su compra su numero de orden es : "aca tengo que poner la orden FIREBASE"</p>}
-
+                ordenDeCompra === "" ? <div className="p-20">
+                    <GridLoader
+                        color="#724b80"
+                        cssOverride={{}}
+                        loading
+                        margin={5}
+                        size={50}
+                    />
+                </div>
+                    :
+                    <div className="pl-10 pt-20">
+                    <p>Muchas gracias por su compra su numero de orden es : "{ordenDeCompra}"</p>
+                    <Link to="/"><button className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Ir Al Inicio</button></Link>
+                    </div>
+                    }
         </>
     )
 }

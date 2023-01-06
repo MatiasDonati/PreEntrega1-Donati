@@ -41,7 +41,7 @@ const ItemDetailContainer = ({ stock }) => {
   return (
     <>
       {loading ?
-      <div className="text-center">
+      <div className="text-center pt-20">
         <GridLoader
           color="#724b80"
           cssOverride={{}}
@@ -51,7 +51,7 @@ const ItemDetailContainer = ({ stock }) => {
         />
         </div>
         :
-        <div className="p-10">
+        <div className="p-10 pt-20">
           <div className="card w-96 glass">
             <figure><img src={detalle.pictureUrl} alt="img" /></figure>
             <div className="card-body">

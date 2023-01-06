@@ -32,7 +32,7 @@ const Bio = () => {
     }
 
     return (
-        <>
+        <div className="pt-20">
             <div className="p-5">
                 <img src={yanilog1} alt="" className="mx-auto rounded-full p-2"></img>
             </div>
@@ -45,7 +45,7 @@ const Bio = () => {
                 </div> : <div></div>}
                 {boton == false ? <div></div> : <Link to='/'><button className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Inicio</button></Link>}
             </div>
-        </>
+        </div>
     )
 }
 export default Bio
