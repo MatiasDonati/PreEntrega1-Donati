@@ -11,3 +11,10 @@ Ejemplo para tener en cuenta la parte de Firebase del carrito, data de comprador
 solicitar archivo data firebase (tener en cuenta para compartir el proyecto al profe)
 
 ### `npm start`
+
+
+Admin Log:
+
+admin@yanilog.com
+
+pass: 123123

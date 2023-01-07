@@ -26,7 +26,7 @@ const Formulario = ({ makeOrder, ordenDeCompra, clearCart }) => {
     return (
         <>
             {orden === false ?
-                <form onSubmit={handleSubmit} className="pt-20 pl-10">
+                <form onSubmit={handleSubmit} className="pt-20 pl-10 justify-center items-center h-screen mx-auto container w-full">
                     <div className="flex flex-col">
                         <label className="py-4">Nombre:
                             <input
@@ -80,6 +80,7 @@ const Formulario = ({ makeOrder, ordenDeCompra, clearCart }) => {
                     :
                     <div className="pl-10 pt-20">
                     <p>Muchas gracias por su compra su numero de orden es : "{ordenDeCompra}"</p>
+                    <br/>
                     <Link to="/"><button className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Ir Al Inicio</button></Link>
                     </div>
                     }

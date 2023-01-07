@@ -74,7 +74,9 @@ const Cart = () => {
 
 
   return (
-    <div className="pt-20">
+    <div className="pt-20"
+    // justify-center items-center h-screen mx-auto container w-full
+    >
     {finalizarCompra === false ?
       <div className="m-10 text-xl">
         <strong className="content-center">Carrito de Compras</strong>

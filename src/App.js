@@ -15,14 +15,23 @@ import React, { useState } from 'react';
 import Cart from './components/Cart';
 import ItemList from './components/fromFireBase/ItemList';
 import Formulario from './components/Formulario';
+import Login from './components/Login';
+import Register from './components/Register';
+import EditItemsAdmin from './components/EditItemsAdmin';
+import { RutaProtejida } from './components/RutaProtegida';
+import { useAuth } from './context/AuthContext';
+import MensajeAdmin from './components/MensajeAdmin';
 
 function App() {
+
+  const { user } = useAuth()
 
   const saludo = 'Bienvenidxs!'
 
   return (
     <BrowserRouter>
       <NavBar />
+      {user && <MensajeAdmin />}
       <Routes >
         {/* <Route path='/' element={<Inicio />} /> */}
         <Route path='/' element={<ItemListContainer greeting={saludo} />} />
@@ -33,6 +42,14 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path='/checkout' element={<Formulario />} />
         <Route path='/category/obracompleta' element={<ObraCompleta />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/edit-items-admin' element={
+          <RutaProtejida>
+            <EditItemsAdmin />
+          </RutaProtejida>
+        }
+        />
         {/* FIREBASE */}
         <Route path='/itemFireBase' element={<ItemList />} />
         {/* Tests */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { CartContextProvider } from './context/CartContext';
+import { AuthProvider } from './context/AuthContext';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -8,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -26,16 +28,17 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
+export const auth = getAuth(app)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <AuthProvider>
   <CartContextProvider>
     <React.StrictMode>
       <App />
     </React.StrictMode>
   </CartContextProvider>
-
+  </AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

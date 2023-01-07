@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import ItemList from "./ItemList"
 import { collection, getDocs, getFirestore, limit, query, where } from "firebase/firestore";
+import { useAuth } from "../context/AuthContext";
 
 
 const ItemListContainer = ({ greeting }) => {
@@ -10,6 +11,8 @@ const ItemListContainer = ({ greeting }) => {
 
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(false)
+
+  const { user } = useAuth()
 
   const getItems = async () => {
     const db = getFirestore()
