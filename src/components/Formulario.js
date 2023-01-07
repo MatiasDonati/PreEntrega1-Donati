@@ -14,7 +14,7 @@ const Formulario = ({ makeOrder, ordenDeCompra, clearCart }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setOrden(true)
-        makeOrder(name, celular, correo)
+        makeOrder(name, apellido, celular, tarjeta, correo)
         clearCart()
         console.log(name, apellido, celular, tarjeta, correo);
     }
@@ -75,11 +75,22 @@ const Formulario = ({ makeOrder, ordenDeCompra, clearCart }) => {
                 </div>
                     :
                     <div className="pl-10 pt-20">
-                    <p>Muchas gracias {name} por su compra su numero de orden es : "{ordenDeCompra}"</p>
-                    <br/>
-                    <Link to="/"><button className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Ir Al Inicio</button></Link>
+
+                        <h1>Corroborá tus datos personales:</h1>
+                        <h2>Nombre: {name}</h2>
+                        <h2>Apellido: {apellido}</h2>
+                        <h2>Celular: {celular}</h2>
+                        <h2>Numero de Tarjeta: {tarjeta}</h2>
+                        <h2>Correo: {correo}</h2>
+
+                        <button className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Ok</button>
+                        <button className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Editar</button>
+
+                        <p>Muchas gracias {name} por su compra su numero de orden es : "{ordenDeCompra}"</p>
+                        <br />
+                        <Link to="/"><button className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Ir Al Inicio</button></Link>
                     </div>
-                    }
+            }
         </>
     )
 }

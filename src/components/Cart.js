@@ -21,8 +21,8 @@ const Cart = () => {
     setFinalizarCompra(true)
   }
 
-  const makeOrder = (name, celular, correo) => {
-    const user = { name: name, phone: celular, email: correo }
+  const makeOrder = (name, apellido, celular, tarjeta, correo) => {
+    const user = { name: name, apellido: apellido, phone: celular, tarjeta: tarjeta, email: correo }
     const order = {
       buyer: user,
       items: items
