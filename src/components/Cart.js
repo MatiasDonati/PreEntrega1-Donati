@@ -21,8 +21,8 @@ const Cart = () => {
     setFinalizarCompra(true)
   }
 
-  const makeOrder = () => {
-    const user = { name: 'Juan', phone: 432432, email: 'juan@gmail.com' }
+  const makeOrder = (name, celular, correo) => {
+    const user = { name: name, phone: celular, email: correo }
     const order = {
       buyer: user,
       items: items
@@ -77,38 +77,38 @@ const Cart = () => {
     <div className="pt-20"
     // justify-center items-center h-screen mx-auto container w-full
     >
-    {finalizarCompra === false ?
-      <div className="m-10 text-xl">
-        <strong className="content-center">Carrito de Compras</strong>
-        <br />
-        {totalPrice > 0
-          &&
-          <>
-            <strong>Precio total: $ {totalPrice}</strong>
-            {totalCantidad === 1 ? <div>Cantidad: {totalCantidad} Obra</div> : <div>Cantidad: {totalCantidad} Obras</div>}
-          </>}
-        {totalPrice >= 5000 && <><p>Envio gratis!</p><p className="text-sm">Superaste los $5000!</p></>}
-        {items.map(product => <ProductoEnCart key={product.id} {...product} contador={contador} totalPrice={totalPrice} />)}
-        {
-          items.length === 0 ?
-            <div className="pt-20">
-              <p>El carrito se encuentra vacío</p>
-              <Link to='/' ><button className="btn">Ir a comprar</button></Link>
-            </div>
-            :
+      {finalizarCompra === false ?
+        <div className="m-10 text-xl">
+          <strong className="content-center">Carrito de Compras</strong>
+          <br />
+          {totalPrice > 0
+            &&
             <>
-              <button className="btn" onClick={clearCart}>Vaciar Carrito</button>
-              <br />
-              <br />
-              <button className="btn" onClick={mostrarFormulario}>Comprar</button>
-              <button className="btn" onClick={editOrderHandler}>Actualizar Compra</button>
-              <button className="btn" onClick={makeBatch}>Batch</button>
-            </>
-        }
-      </div>
-      :
-      <Formulario makeOrder={makeOrder} ordenDeCompra={ordenDeCompra} clearCart={clearCart} />
-    }
+              <strong>Precio total: $ {totalPrice}</strong>
+              {totalCantidad === 1 ? <div>Cantidad: {totalCantidad} Obra</div> : <div>Cantidad: {totalCantidad} Obras</div>}
+            </>}
+          {totalPrice >= 5000 && <><p>Envio gratis!</p><p className="text-sm">Superaste los $5000!</p></>}
+          {items.map(product => <ProductoEnCart key={product.id} {...product} contador={contador} totalPrice={totalPrice} />)}
+          {
+            items.length === 0 ?
+              <div className="pt-20">
+                <p>El carrito se encuentra vacío</p>
+                <Link to='/' ><button className="btn">Ir a comprar</button></Link>
+              </div>
+              :
+              <>
+                <button className="btn" onClick={clearCart}>Vaciar Carrito</button>
+                <br />
+                <br />
+                <button className="btn" onClick={mostrarFormulario}>Comprar</button>
+                <button className="btn" onClick={editOrderHandler}>Actualizar Compra</button>
+                <button className="btn" onClick={makeBatch}>Batch</button>
+              </>
+          }
+        </div>
+        :
+        <Formulario makeOrder={makeOrder} ordenDeCompra={ordenDeCompra} clearCart={clearCart} />
+      }
     </div>
   )
 }
