@@ -13,14 +13,10 @@ const Formulario = ({ makeOrder, ordenDeCompra, clearCart }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // alert(`The name you entered was: ${name}`)
-        console.log(name, apellido, celular, tarjeta, correo);
-    }
-
-    const compraGenerada = () => {
         setOrden(true)
         makeOrder()
         clearCart()
+        console.log(name, apellido, celular, tarjeta, correo);
     }
 
     return (
@@ -65,7 +61,7 @@ const Formulario = ({ makeOrder, ordenDeCompra, clearCart }) => {
                         </label>
                     </div>
                     <br />
-                    <button onClick={compraGenerada} className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full " type="submit">Generar Orden de Compra</button>
+                    <button onClick={handleSubmit} className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full " type="submit">Generar Orden de Compra</button>
                 </form>
                 :
                 ordenDeCompra === "" ? <div className="p-20">
