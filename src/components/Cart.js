@@ -22,11 +22,17 @@ const Cart = () => {
   }
 
   const makeOrder = (name, apellido, celular, tarjeta, correo) => {
-    const user = { name: name, apellido: apellido, phone: celular, tarjeta: tarjeta, email: correo }
+    const user = {
+      name: name,
+      apellido: apellido,
+      phone: celular,
+      tarjeta: tarjeta,
+      email: correo
+    }
     const order = {
       buyer: user,
-      items: items
-      // PASAR PRECIO TOTAL
+      items: items,
+      totalPrice: totalPrice
     }
     console.log('Levantando orden:', order);
     saveORder(order)
@@ -107,7 +113,7 @@ const Cart = () => {
           }
         </div>
         :
-        <Formulario makeOrder={makeOrder} ordenDeCompra={ordenDeCompra} clearCart={clearCart} />
+        <Formulario totalPrice={totalPrice} makeOrder={makeOrder} ordenDeCompra={ordenDeCompra} clearCart={clearCart} />
       }
     </div>
   )

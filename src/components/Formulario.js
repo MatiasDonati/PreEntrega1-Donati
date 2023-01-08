@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import GridLoader from "react-spinners/ClipLoader";
 
-const Formulario = ({ makeOrder, ordenDeCompra, clearCart }) => {
+const Formulario = ({ makeOrder, ordenDeCompra, clearCart, totalPrice }) => {
 
     const [name, setName] = useState("");
     const [apellido, setApellido] = useState("");
@@ -21,6 +21,14 @@ const Formulario = ({ makeOrder, ordenDeCompra, clearCart }) => {
 
     return (
         <>
+            {totalPrice > 5000 ?
+                <div>
+                    <h1>Precio final: ${totalPrice}</h1>
+                    <h1>Envio gratis</h1>
+                </div>
+                :
+                <h1>Precio Final: ${totalPrice}</h1>
+            }
             {orden === false ?
                 <form onSubmit={handleSubmit} className="pt-20 pl-10 justify-center items-center h-screen mx-auto container w-full">
                     <div className="flex flex-col">
