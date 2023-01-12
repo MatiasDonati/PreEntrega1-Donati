@@ -3,7 +3,6 @@ import { getFirestore, doc, getDoc, collection, getDocs, where, query, limit } f
 import { logEvent } from "firebase/analytics"
 import { async } from "@firebase/util"
 
-
 const ItemList = () => {
 
     const [item, seItem] = useState()
@@ -23,6 +22,7 @@ const ItemList = () => {
         const docRef = doc(db, 'items', '7XwBYvlQqYz05Wqzmy8y')
         getDoc(docRef).then(snapshot => {
             seItem({ id: snapshot.id, ...snapshot.data() });
+            console.log(item.id);
         })
     }
 
