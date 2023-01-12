@@ -21,14 +21,17 @@ const Formulario = ({ makeOrder, ordenDeCompra, clearCart, totalPrice }) => {
 
     return (
         <>
-            {totalPrice > 5000 ?
-                <div>
-                    <h1>Precio final: ${totalPrice}</h1>
-                    <h1>Envio gratis</h1>
-                </div>
-                :
-                <h1>Precio Final: ${totalPrice}</h1>
+            {totalPrice == 0 ? <div></div> :
+
+                totalPrice > 5000 ?
+                    <div>
+                        <h1>Precio final: ${totalPrice}</h1>
+                        <h1>Envio gratis</h1>
+                    </div>
+                    :
+                    <h1>Precio Final: ${totalPrice}</h1>
             }
+
             {orden === false ?
                 <form onSubmit={handleSubmit} className="pt-20 pl-10 justify-center items-center h-screen mx-auto container w-full">
                     <div className="flex flex-col">
@@ -83,18 +86,15 @@ const Formulario = ({ makeOrder, ordenDeCompra, clearCart, totalPrice }) => {
                 </div>
                     :
                     <div className="pl-10 pt-20">
-
-                        <h1>Corroborá tus datos personales:</h1>
+                        <h1>Compra Exitosa!</h1>
+                        <br />
                         <h2>Nombre: {name}</h2>
                         <h2>Apellido: {apellido}</h2>
                         <h2>Celular: {celular}</h2>
                         <h2>Numero de Tarjeta: {tarjeta}</h2>
                         <h2>Correo: {correo}</h2>
-
-                        <button className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Ok</button>
-                        <button className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Editar</button>
-
-                        <p>Muchas gracias {name} por su compra su numero de orden es : "{ordenDeCompra}"</p>
+                        <br />
+                        <p> {name} Muchas gracias por su compra, su numero de orden es : "{ordenDeCompra}"</p>
                         <br />
                         <Link to="/"><button className="btn bg-violet-700 hover:bg-pink-300 text-white font-bold py-2 px-4 rounded-full">Ir Al Inicio</button></Link>
                     </div>

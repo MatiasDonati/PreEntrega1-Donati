@@ -32,8 +32,6 @@ const NavBar = () => {
                 <div>
                     <Link to='/category/ilustracion' className="btn btn-ghost normal-case text-xl">Ilustraciones</Link>
                     <Link to='/category/pintura' className="btn btn-ghost normal-case text-xl">Pinturas</Link>
-                    <Link to='/bio' className="btn btn-ghost normal-case text-xl">Yanilog Bio</Link>
-                    <Link to="/category"><button className="btn btn-ghost normal-case text-xl">Categorías Usando Estados</button></Link>
                 </div>
             </div>
             {!user ?
@@ -44,31 +42,9 @@ const NavBar = () => {
                 <button onClick={handleLogout} className="btn btn-ghost normal-case text-xl">Logout</button>
                 </>
             }
-
-            {/* <Link to="/register"><button className="btn btn-ghost normal-case text-xl">Admin Register</button></Link> */}
-            <div className="form-control">
-                <input type="text" placeholder="Buscar" className="input input-bordered" />
-            </div>
             <div className="flex-none">
-
                 <div className="dropdown dropdown-end">
                     {items.length > 0 && <CartWidget />}
-                </div>
-                <div className="dropdown dropdown-end">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img src="https://placeimg.com/80/80/people" />
-                        </div>
-                    </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li>
-                            <a className="justify-between">Perfil
-                                <span className="badge">Nuevo</span>
-                            </a>
-                        </li>
-                        <li><a>Ajustes</a></li>
-                        <li><a>YaniLogOut</a></li>
-                    </ul>
                 </div>
             </div>
         </div>

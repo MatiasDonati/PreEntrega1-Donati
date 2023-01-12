@@ -47,36 +47,6 @@ const Cart = () => {
     setOrdenDeCompra(id.id)
   }
 
-  const editOrderHandler = () => {
-    const id = '2egVMwtInIKQCPRrAfSw'
-    editOrder(id)
-  }
-
-  const editOrder = (id) => {
-    const db = getFirestore()
-    const orderDoc = doc(db, 'compra', id)
-    updateDoc(orderDoc, {
-      buyer: {
-        name: 'Robertoooo',
-        phone: 1123123123123123123,
-        email: 'Robertoooon@gmail.com',
-        // total: { totalPrice }
-      }
-    }).then(res => console.log(res))
-  }
-
-  const makeBatch = () => {
-    const db = getFirestore()
-
-    const order1 = doc(db, 'compra', '2egVMwtInIKQCPRrAfSw')
-
-    const batch = writeBatch(db)
-
-    batch.update(order1, { total: 12345 })
-
-    batch.commit()
-  }
-
 console.log(items);
 
   return (
@@ -103,12 +73,10 @@ console.log(items);
               </div>
               :
               <>
-                <button className="btn" onClick={clearCart}>Vaciar Carrito</button>
-                <br />
-                <br />
                 <button className="btn" onClick={mostrarFormulario}>Comprar</button>
-                <button className="btn" onClick={editOrderHandler}>Actualizar Compra</button>
-                <button className="btn" onClick={makeBatch}>Batch</button>
+                <br />
+                <br />
+                <button className="btn" onClick={clearCart}>Vaciar Carrito</button>
               </>
           }
         </div>
