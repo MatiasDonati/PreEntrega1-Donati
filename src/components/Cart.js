@@ -77,7 +77,7 @@ const Cart = () => {
     batch.commit()
   }
 
-
+console.log(items);
 
   return (
     <div className="pt-20"

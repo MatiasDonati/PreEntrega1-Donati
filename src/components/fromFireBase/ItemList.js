@@ -22,7 +22,6 @@ const ItemList = () => {
         const docRef = doc(db, 'items', '7XwBYvlQqYz05Wqzmy8y')
         getDoc(docRef).then(snapshot => {
             seItem({ id: snapshot.id, ...snapshot.data() });
-            console.log(item.id);
         })
     }
 
