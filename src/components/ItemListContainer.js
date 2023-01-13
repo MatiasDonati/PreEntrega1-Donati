@@ -19,7 +19,6 @@ const ItemListContainer = ({ greeting }) => {
     const collectionRef = collection(db, 'items')
     const snapshot = await getDocs(collectionRef)
     setProducts(snapshot.docs.map(doc => ({ id: doc.data, ...doc.data() })))
-    console.log(products);
     setLoading(false)
   }
 

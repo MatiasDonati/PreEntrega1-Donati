@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react"
-import { PRODUCTS } from "../data/products";
 import Item from "./Item";
 import GridLoader from "react-spinners/ClipLoader";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const ItemList = ({products, loading}) => {
 

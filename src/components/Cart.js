@@ -34,7 +34,6 @@ const Cart = () => {
       items: items,
       totalPrice: totalPrice
     }
-    console.log('Levantando orden:', order);
     saveORder(order)
 
   }
@@ -43,11 +42,8 @@ const Cart = () => {
     const db = getFirestore()
     const orderCollection = collection(db, "compra")
     const id = await addDoc(orderCollection, order)
-    console.log('Nueva orden de compra:', id.id);
     setOrdenDeCompra(id.id)
   }
-
-console.log(items);
 
   return (
     <div className="pt-20"

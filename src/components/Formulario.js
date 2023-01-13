@@ -16,7 +16,6 @@ const Formulario = ({ makeOrder, ordenDeCompra, clearCart, totalPrice }) => {
         setOrden(true)
         makeOrder(name, apellido, celular, tarjeta, correo)
         clearCart()
-        console.log(name, apellido, celular, tarjeta, correo);
     }
 
     return (
